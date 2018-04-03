@@ -116,7 +116,6 @@ public class MahasiswaController {
 		model.addAttribute("options_goldar", mModel.GOLONGAN_DARAH_OPTIONS);
 		model.addAttribute("options_jalur_masuk", mModel.JALUR_MASUK_OPTIONS);
 		model.addAttribute("linkSubmit", "/mahasiswa/ubah/submit");
-		System.out.println(mahasiswa.getId());
 		return "form-update-mahasiswa";
 	}
 
