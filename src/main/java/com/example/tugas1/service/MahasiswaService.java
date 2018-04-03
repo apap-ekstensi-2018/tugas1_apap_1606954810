@@ -10,6 +10,8 @@ public interface MahasiswaService extends DataService<MahasiswaModel> {
 	
 	int countMahasiswaByTahunAndProdi(int tahun, int idProdi);
 	
+	int countMahasiswaByTahunAndProdiAndStatus(int tahun, int idProdi);
+	
 	List<MahasiswaModel> selectMahasiswaByProdi(int idProdi);
 	
 	Map<String, String> selectMahasiswaBy(int idUniv, int idFakultas, int idProdi);

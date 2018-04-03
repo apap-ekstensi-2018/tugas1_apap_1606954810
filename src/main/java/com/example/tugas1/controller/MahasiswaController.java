@@ -137,11 +137,15 @@ public class MahasiswaController {
 		FakultasModel fakultas = new FakultasModel();
 		UniversitasModel univ = new UniversitasModel();
 		int countMahasiswa = 0;
+		int countMahasiswaStatus = 0;
+		double hasilPresentase = 0;
 		
 		if (tahun != null && idProdi != null) {
 			int parseTahun = Integer.valueOf(tahun);
 			int parseIdProdi = Integer.valueOf(idProdi);
 			countMahasiswa = mahasiswaDAO.countMahasiswaByTahunAndProdi(parseTahun, parseIdProdi);
+			countMahasiswaStatus = mahasiswaDAO.countMahasiswaByTahunAndProdiAndStatus(parseTahun, parseIdProdi);
+			hasilPresentase = ((double) countMahasiswaStatus/countMahasiswa) * 100.0;
 			
 			prodi = prodiDAO.selectDataById(parseIdProdi);
 			fakultas = fakultasDAO.selectDataById(prodi != null ? prodi.getIdFakultas() : null);
@@ -153,8 +157,8 @@ public class MahasiswaController {
 		model.addAttribute("prodi", prodi);
 		model.addAttribute("fakultas", fakultas);
 		model.addAttribute("universitas", univ);
-		model.addAttribute("totalPresentase", countMahasiswa);
-		model.addAttribute("infoPresentase", String.format("%s dari 100 Mahasiswa Telas Lulus", countMahasiswa));
+		model.addAttribute("totalPresentase", hasilPresentase);
+		model.addAttribute("infoPresentase", String.format("%s dari %s Mahasiswa Telas Lulus", countMahasiswaStatus, countMahasiswa));
 		return "view-presentation-graduation";
 	}
 

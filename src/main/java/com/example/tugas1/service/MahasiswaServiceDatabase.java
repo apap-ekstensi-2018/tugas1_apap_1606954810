@@ -57,6 +57,12 @@ public class MahasiswaServiceDatabase implements MahasiswaService {
 	}
 	
 	@Override
+	public int countMahasiswaByTahunAndProdiAndStatus(int tahun, int idProdi) {
+		// TODO Auto-generated method stub
+		return mahasiswaMapper.countMahasiswaByTahunAndProdiAndStatus(tahun, idProdi);
+	}
+
+	@Override
 	public List<MahasiswaModel> selectMahasiswaByProdi(int idProdi) {
 		return mahasiswaMapper.selectMahasiswaByProdi(idProdi);
 	}

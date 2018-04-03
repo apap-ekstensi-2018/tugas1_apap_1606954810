@@ -90,6 +90,9 @@ public interface MahasiswaMapper {
 	@Select("SELECT COUNT(*) FROM mahasiswa WHERE tahun_masuk=#{thn} AND id_prodi=#{prodi}")
 	int countMahasiswaByTahunAndProdi(@Param("thn") int tahun, @Param("prodi") int idProdi);
 	
+	@Select("SELECT COUNT(*) FROM mahasiswa WHERE tahun_masuk-#{thn} AND id_prodi=#{prodi} AND status='Lulus'")
+	int countMahasiswaByTahunAndProdiAndStatus(@Param("thn") int tahun, @Param("prodi") int idProdi);
+	
 	@Select("SELECT * FROM mahasiswa WHERE id_prodi=#{idProdi}")
 	@Results({
 		@Result(property = "tempatLahir", column = "tempat_lahir"),
