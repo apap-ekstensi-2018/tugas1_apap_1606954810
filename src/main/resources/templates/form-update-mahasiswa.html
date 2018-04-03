@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Ubah Mahasiswa</title>
+<link th:replace="fragments/fragment :: stylesheet" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: navbar('home')"></div>
+	<br />
+	<div class="container">
+		<h3>Ubah Mahasiswa</h3>
+		<br />
+	</div>
+	<div class="container"
+		th:replace="fragments/form-mahasiswa :: formMahasiswa"></div>
+</body>
+</html>

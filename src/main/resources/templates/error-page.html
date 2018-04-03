@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<title>Terjadi Kesalahan</title>
+<link th:replace="fragments/fragment :: stylesheet" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: navbar('home')"></div>
+	<br/>
+	<div class="container">
+		<h1>ERROR!</h1>
+		<h5 th:text="${msgError}">Halaman yang dituju terjadi error!</h5>
+	</div>
+</body>
+</html>

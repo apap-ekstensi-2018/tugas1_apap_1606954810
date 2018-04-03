@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Kelulusan Mahasiswa</title>
+<link th:replace="fragments/fragment :: stylesheet" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: navbar('kelulusanMahasiswa')"></div>
+	<br />
+	<div class="container">
+		<h3>Presentase Kelulusan</h3>
+		<br />
+	</div>
+	<div class="container" th:hidden="${closeForm}">
+		<form action="/kelulusan" method="get">
+			<div class="form-group col-5">
+				<label>Tahun</label> <input type="text" class="form-control" name="thn" /> <br /> 
+				<label>Id Program Studi</label> <input type="text" class="form-control" name="prodi" /> <br />
+				<button class="btn btn-primary" type="submit" role="button">Lihat</button>
+			</div>
+		</form>
+	</div>
+	<div class="container" th:hidden="${closeOutput}">
+		<div class="row">
+			<div class="col-7">
+				<div class="row">
+					<div class="col-4"><p><strong>Program Studi</strong></p></div>
+					<div class="col-8"><p th:text="${prodi.namaProdi}">Bla.............</p></div>
+					<div class="col-4"><p><strong>Fakultas</strong></p></div>
+					<div class="col-8"><p th:text="${fakultas.namaFakultas}">Bla.............</p></div>
+					<div class="col-4"><p><strong>Universitas</strong></p></div>
+					<div class="col-8"><p th:text="${universitas.namaUniversitas}">Bla.............</p></div>
+				</div>
+			</div>
+			<div class="col-5">
+				<h1 th:text="${totalPresentase} + '%'">Persentase</h1>
+				<h5 th:text="${infoPresentase}">Info</h5>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

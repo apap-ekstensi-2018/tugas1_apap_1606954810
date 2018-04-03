@@ -1,0 +1,15 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Response</title>
+<link th:replace="fragments/fragment :: stylesheet"/>
+</head>
+<body>
+<div th:replace="fragments/fragment :: navbar('home')"></div>
+<br/>
+<div class="container">
+	<h3 th:text="${statMessage}"></h3>
+	<h6 th:text="${message}"></h6>
+</div>
+</body>
+</html>

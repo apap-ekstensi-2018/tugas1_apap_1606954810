@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Data Mahasiswa</title>
+<link th:replace="fragments/fragment :: stylesheet" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: navbar('home')"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+			<br/>
+				<h3>Lihat Data Mahasiswa</h3>
+			<br/>
+			</div>
+			<div class="col-5"><p><strong>NPM</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.npm}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Nama</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.nama}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Tempat/Tanggal Lahir</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.tempatLahir} + ' ' + ${mahasiswa.tanggalLahir}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Program Studi</strong></p></div>
+			<div class="col-7"><p th:text="${prodi.namaProdi}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Fakultas</strong></p></div>
+			<div class="col-7"><p th:text="${fakultas.namaFakultas}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Universitas</strong></p></div>
+			<div class="col-7"><p th:text="${universitas.namaUniversitas}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Jenis Kelamin</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.jenisKelamin}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Agama</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.agama}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Golongan Darah</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.golonganDarah}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Tahun Masuk</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.tahunMasuk}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Jalur Masuk</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.jalurMasuk}">Bla.............</p></div>
+			<div class="col-5"><p><strong>Status</strong></p></div>
+			<div class="col-7"><p th:text="${mahasiswa.status}">Bla.............</p></div>
+			<div class="col-5"></div>
+			<div class="col-7">
+				<div class="row">
+					<div class="col-3">
+						<p>1</p>
+					</div>
+					<div class="col-3">
+						<p>2</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
